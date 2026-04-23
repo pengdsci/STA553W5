@@ -1,91 +1,425 @@
-<!DOCTYPE html>
-<html lang="en">                        <!-- open html tag: required  -->
-  <head>                                  <!-- open page header: required -->
-    <title>My First Web Page</title>      <!-- page title appears on the tab -->
-    <style>
-body{
-font-family: Arial, Helvetica, sans-serif;
-background-image: url('bgIMG.jpg');
-}
-</style>
-  </head>                                 <!-- close page header: required -->
-    
-  <body>                                  <!-- open html body: required -->
-    <!-- All contents of the web page MUST be placed between <body> </body> -->
-  <br><br>
- <table border="2" bordercolor="gray" bgcolor="#f6f6f6" width="70%" align="center"> 
-    <tr>
-      <TD>     
-        <br>      
-    <center><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/hA19odHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0iQ0Q0NTgyQTIwNzU4REU2RDRERDVENTI2QzlDNkFFNzQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6N0FDMEQyOTlCNDAxMTFFMkFDQTJDRTYwRDIxQ0ZCMDMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6N0FDMEQyOThCNDAxMTFFMkFDQTJDRTYwRDIxQ0ZCMDMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozQTlBOTExMzVEQjNFMjExOUEzMEExMjcxRUFEQzU0MSIgc3RSZWY6ZG9jdW1lbnRJRD0iQ0Q0NTgyQTIwNzU4REU2RDRERDVENTI2QzlDNkFFNzQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tl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" alt="w02-wcu-logo" width="300" height="90"></center> 
-    <center><h2><font color="darkblue"> Your Name</font></h2> 
-      <!-- contact information  -->
-      <font color="navy" size=" 3">
-      Address: xxxxxxxxxxx <br>
-      Phone:  xxx-xxx-xxxx <br>
-      Email:  xxx@gmail.com
-      </font></center>
-    <br>
-    <br>
-    
-    
-    
-    <table border="1" bordercolor="darkgreen" bgcolor="#f6f6f6" width="95%" align="center"> 
-        <tr>
-            <TD>
-                 <h3><font color="navy">Short Bio</font></h3>
-            </TD>
-            <TD>
-               <font size=" 4">
-                  <p> write your short bio here.....</p>
-                </font>
-            </TD>
-        </tr>
 
-         <tr>
-            <TD>
-                <h3><font color="navy">Education</font></h3>
-            </TD>
-            <TD>
-               <font size="4">
-                  <p> write your professional experience here.....</p>
-               </font>
-            </TD>
-        </tr>        
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+    <title>STA553-w01</title>
+<link rel="stylesheet" type="text/css" href="css/css">  
+<link rel='stylesheet' id='dt_style-css'  href='css/style.css' type='text/css' />
+<link rel='stylesheet' id='dt_menu-css'  href='css/menu-buttons.css' type='text/css' /> 
+<link rel='stylesheet' href='css/styleInFile.css' type='text/css' /> 
+
+<script type='text/javascript' id='sgr_main-js-extra'>
+/* <![CDATA[ */
+var sgr_main = {"sgr_site_key":"6LcmTAcaAAAAAEELVElChVbNtpYH8TxjxPvYq9gv"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='js/jquery.min.js' id='jquery-core-js'></script>
+<script type='text/javascript' src='js/scripts.js' id='dt_scripts-js'></script>
+<script type='text/javascript' src='js/cp01.js'></script> 
+<script type='text/javascript' src='js/cp02.js'></script>
+<!--script type='text/javascript' src='js/cp03.js' id="myBtn"></script-->    
+</head>
+
+<body class="archive category category-reviews category-8">	
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="img/top.png" width="30" height="30"></button>
+    
+	<div id="wrap">
+	<div  class="boxed"  id="page">
+          <div id="bg">
+
+            <div id="wrapper">
+               <header id="header" class="logo-left">
+                   
+                  <a href="" class="logo">                
+                     <table borde="1"><tbody><tr>
+                       <td><img class="dt-top-logo" src="img/placeholder.jpg" width="50" height="90"/></td> <td style="text-align: center; vertical-align: middle;"><img class="dt-top-logo" src="img/logo.gif" width="90" height="90"/><br>
+                        <a href = "https://pixabay.com/gifs/data-graph-up-down-line-graph-6608/"><font color = "gray" size = "1">Credit: Pixabay</font></a>
+                        </td>
+                         
+                     <td><img class="dt-top-logo" src="img/courseName.jpg" width="200" height="80"/><br>
+                         <!--a href = "https://pengdsci.github.io/sta553/"><font color = "gray" size = "1">https://pengdsci.github.io/sta553/</font></a--><img class="dt-top-logo" src="img/url.jpg" width="200" height="20"/></td>
+                                             
+                         <td><img class="dt-top-logo" src="img/placeholder.jpg" width="340" height="80"/> <img class="dt-top-logo" src="img/banner.jpg" width="200" height="90"/></td>
+                          
+                      <td>                                    
+                          <a href="https://pengdsci.github.io/STA553EB/"  target="popup" onclick="window.open('https://pengdsci.github.io/STA553EB/','name','width=900,height=500')"><center><img src = "553.png"  width="60" height="90"></center></a>
+                          
+                       </td> </tr> </tbody></table></a>
+                   
+                   
+<!----------------------------->            
+<!--  Top navigation panel   -->
+<!----------------------------->            
+<nav>
+<div class="main-menu">
+
+  <ul id="nav">
+               <li class="first"><a href="w00/00-STA490-SyllabusWS-SP2023.pdf"><font color = "#365060">Syllabus</font></a></li>
+               <li><a href=""><font color = "#365060">Rubrics</font><span class="a-inner"></span></a> 
+                        <!-- Drop-down manual-->
+                <div><ul>
+                             <li><a href="w00/00-OralPresentationRubrics.pdf" target="popup" 
+                onclick="window.open('w00/00-OralPresentationRubrics.pdf','name','width=900,height=500')">
+                         Oral Presentation</a></li>
+                             <li><a href="w00/00-ParticipationRubrics.pdf" target="popup" 
+                onclick="window.open('w00/00-ParticipationRubrics.pdf','name','width=900,height=500')">
+                                 Class Participation</a></li>
+                             <li><a href="w00/00-ProjectReportingRubrics.pdf" target="popup" 
+                onclick="window.open('w00/00-ProjectReportingRubrics.pdf','name','width=900,height=500')">
+                                Project Reporting</a></li>
+                            </ul>
+                 </div></li>                   
+                     
+                 <li><a href=""><font color = "#365060">Office Hours</font><span class="a-inner"></span></a> 
+                        <!-- Drop-down manual-->
+                        <div><ul>        
+                          <li class="navitem active"><center><b>Tuesday</b> <br><font size=2 color="purple">2:00PM-3:00PM </font></center></li>
+                            
+                          <li class="navitem active"><center><b>Wednesday</b> <br> <font size=2 color="purple">1:30PM-3:30PM <br>(Zoom Only!)</font></center></li>
+                            
+                          <li class="navitem active"><center><b>Thursday</b> <br><font size=2 color="purple">2:00PM-5:00AM</font></center></li>
+                            </ul>
+                        </div></li>
+                     
+                    <li><a href=""><font color = "#365060">Data Sets</font><span class="a-inner"></span></a> 
+                      <div><ul>
+                         <li class="navitem active"><center><!--b>Dr. Peng's Data-site</b><br--><font size=2 color="purple"><a href="https://pengdsci.github.io/datasets/" target="popup" onclick="window.open('https://pengdsci.github.io/datasets/','name','width=900,height=500')" class="nav-link"><font color = "#365060">Peng Data Repos</font></a> </font></center></li>  
+                          
+                         <li class="navitem active"><center><!--b>Dr. Peng's Data-site</b><br--><font size=2 color="purple"><a href="https://libguides.lib.rochester.edu/data-stats" target="popup" onclick="window.open('https://libguides.lib.rochester.edu/data-stats','name','width=900,height=500')" class="nav-link"><font color = "#365060">Free Open Data</font></a> </font></center></li>   
+                          </ul></div>       
+                        
+                     
+                     <li><a href=""><font color = "#365060">Platforms and Software</font><span class="a-inner"></span></a> 
+                        <!-- Drop-down manual-->
+                        <div><ul>        
+                          <li class="navitem active"><center><b>RPubs</b><br><font size=2 color="purple"><a href="https://rpubs.com/" target="popup" onclick="window.open('https://rpubs.com/','name','width=900,height=500')" class="nav-link"><font color = "#365060">https://rpubs.com/</font></a> </font></center></li>
+                            
+                          <li class="navitem active"><center><b>GitHub</b> <br> <font size=2 color="purple"><a href="https://github.com/" target="popup" onclick="window.open('https://github.com/','name','width=900,height=500')" class="nav-link"><font color = "#365060">https://github.com/</font></a></font></center></li>
+                            
+                          <li class="navitem active"><center><b>Tableau Public</b> <br> <font size=2 color="purple"><a href="https://public.tableau.com/app/discover" target="popup" onclick="window.open('https://public.tableau.com/app/discover','name','width=900,height=500')" class="nav-link"><font color = "#365060">https://public.tableau.com</font></a></font></center></li>   
+                            
+                          <li class="navitem active"><center><b>LaTex</b> <br> <font size=2 color="purple"><a href="https://miktex.org/" target="popup" onclick="window.open('https://miktex.org/','name','width=900,height=500')" class="nav-link"><font color = "#365060">https://miktex.org/</font></a></font></center></li>                            
+                            </ul>
+                        </div></li>
+                     
+                     <li><a href=""><font color = "#365060">Programming</font><span class="a-inner"></span></a> 
+                        <!-- Drop-down manual-->
+                        <div><ul>        
+                          <li class="navitem active"><center><b>R &amp; RStudio</b><br><font size=2 color="purple"><a href="https://posit.co/download/rstudio-desktop/" target="popup" onclick="window.open('https://posit.co/download/rstudio-desktop/','name','width=900,height=500')" class="nav-link"><font color = "#365060">[Web link]</font></a> </font></center></li>
+                            
+                          <li class="navitem active"><center><b>SAS OnDemand</b> <br> <font size=2 color="purple"><a href="https://www.sas.com/en_us/software/on-demand-for-academics.html" target="popup" onclick="window.open('https://www.sas.com/en_us/software/on-demand-for-academics.html','name','width=900,height=500')" class="nav-link"><font color = "#365060">[Web link]</font></a></font></center></li>
+                            
+                           <li class="navitem active"><center><b>Python &amp; Anaconda</b> <br> <font size=2 color="purple"><a href="https://www.anaconda.com/" target="popup" onclick="window.open('https://www.anaconda.com/','name','width=900,height=500')" class="nav-link"><font color = "#365060">[Web link]</font></a></font></center></li>
+                            </ul>
+                            </div></li>    
+                            
+                          <li><a href=""><font color = "#365060">Colors</font><span class="a-inner"></span></a> 
+                          <!-- Drop-down manual-->
+                          <div><ul>  
+                           <li class="navitem active"><center><b>Color Picker</b> <br> <font size=2 color="purple"><a href="https://rgbcolorpicker.com/" target="popup" onclick="window.open('https://rgbcolorpicker.com/','name','width=900,height=500')" class="nav-link"><font color = "#365060">https://rgbcolorpicker.com/</font></a></font></center></li>   
+                                                       
+                           <li class="navitem active"><center><b>Color Brewer</b> <br> <font size=2 color="purple"><a href="https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3" target="popup" onclick="window.open('https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3','name','width=900,height=500')" class="nav-link"><font color = "#365060">colorbrewer2.org</font></a></font></center></li>   
+                            
+                           <li class="navitem active"><center><b>Color Contrast</b> <br> <font size=2 color="purple"><a href="https://projects.susielu.com/viz-palette?" target="popup" onclick="window.open('https://projects.susielu.com/viz-palette?','name','width=900,height=500')" class="nav-link"><font color = "#365060">[Web link]</font></a></font></center></li> 
+                            
+                            <li class="navitem active"><center><b>Trending Color Palettes</b> <br> <font size=2 color="purple"><a href="https://coolors.co/palettes/trending" target="popup" onclick="window.open('https://coolors.co/palettes/trending','name','width=900,height=500')" class="nav-link"><font color = "#365060">[Web link]</font></a></font></center></li> 
+
+                            </ul>
+                        </div></li>
+                     
+                     <li><a href=""><font color = "#365060">Presentations</font><span class="a-inner"></span></a> 
+                        <!-- Drop-down manual-->
+                        <div><ul>        
+                           <li class="navitem active"><font size=2 color="purple"><a href="https://bookdown.org/yihui/rmarkdown/xaringan.html" target="popup" onclick="window.open('https://bookdown.org/yihui/rmarkdown/xaringan.html','name','width=900,height=500')" class="nav-link"><font color = "#365060">Ninja Presentations</font></a></font></li> 
+                            
+                           <li class="navitem active"><font size=2 color="purple"><a href="https://bookdown.org/yihui/rmarkdown/beamer-presentation.html" target="popup" onclick="window.open('https://bookdown.org/yihui/rmarkdown/beamer-presentation.html','name','width=900,height=500')" class="nav-link"><font color = "#365060">Beamer Presentations</font></a></font></li> 
+                            
+                           <li class="navitem active"><font size=2 color="purple"><a href="https://bookdown.org/yihui/rmarkdown/slidy-presentation.html" target="popup" onclick="window.open('https://bookdown.org/yihui/rmarkdown/slidy-presentation.html','name','width=900,height=500')" class="nav-link"><font color = "#365060">Slidy Presentations</font></a></font></li> 
+                            
+                           <li class="navitem active"><font size=2 color="purple"><a href="https://bookdown.org/yihui/rmarkdown/powerpoint-presentation.html" target="popup" onclick="window.open('https://bookdown.org/yihui/rmarkdown/powerpoint-presentation.html','name','width=900,height=500')" class="nav-link"><font color = "#365060">Our Old Friend: PPT</font></a></font></li>                         
+                       </ul> </div></li>
+                    <li><a href=""><font color = "#0F3483">Contact &amp; Zoom</font><span class="a-inner"></span></a> 
+                        <!-- Drop-down manual-->
+                        <div><ul>        
+                          <li class="navitem active"><center><b>Office</b> <br><font size=2 color="purple">UNA 107 </font></center></li>
+                            
+                          <li class="navitem active"><center><b>Email</b> <br> 
+                              <a href = "mailto: abc@example.com"><img src = "w00/email.jpg" width="150" height="18"></a>
+                              <font size=2 color="purple"></font></center></li>
+                            
+                          <li class="navitem active"><center><b>Zoom </b> <br> 
+                              <a href="https://wcupa.zoom.us/j/6840171840?pwd=ZC90eHk4OUJ5QUlnUzdCUEd2cW5VZz09" target="popup" onclick="window.open('https://wcupa.zoom.us/j/6840171840?pwd=ZC90eHk4OUJ5QUlnUzdCUEd2cW5VZz09','name','width=900,height=500')" class="nav-link"><font color = "#0F3483">Web Link</font></a>
+                              <font size=2 color="purple"></font></center></li>   
+                          </ul>
+                        </div></li>
+      
+               </ul>
+    </div>
+</nav>
+</header>
+
+<div id="svdbanner">
+            
+    <div id="container">
+          <!--h2>Part One: Strategies and Tools for Effective Communication </h2>
+      <!--div class="hr hr-wide gap-big"> </div-->
+    <!--div class="item-blog"-->
+    <h3><a id="w02"> 1. Tools, Technologies, and Platforms for Effective Visualizations </a></h3>
         
-         <tr>
-            <TD>
-                <h3><font color="navy">Experience</font></h3>
-            </TD>
-            <TD>
-               <font size="4">
-                  <p> write your professional experience here.....</p>
-               </font>
-            </TD>
-        </tr>
+    <!--div class="entry-meta">
+        <span class="ico-link date"><span>September 23, 2023</span></span><span class="ico-link author"><a href="">Cheng Peng</a></span>
+    </div-->
         
-         <tr>
-            <TD>   
-              <h3><font color="navy">Projects</font></h3>
-            </TD>
-            <TD>
-               <p> list your project here.....</p>
-                <li>Project #1: <a href="https://pengdsci.github.io/STA551/w02/ninjia/NinjaSlideTherm.html"> Principles of Visualization</a></li>
-            </TD>
-        </tr>
+     <h5>Topics and Notes</h5>
+        <ol style="line-height: 1.5em; margin-bottom: 15px">
+          <li> A laptop with relevant software programs installed.</li>
+          <li> Outline of the topics for the semester <a href="w01/bigPicture.jpg"  target="_blank" 
+                 onclick="window.open('w01/bigPicture.jpg','name','width=1200,height=700')"><link-btn> IMAGE LINK</link-btn></a></li>
+          <li> Computational tools: R, RStudio, and MikTek (please install the most current version)  </li>
+            <ul>
+               <li>a. R and RStudio <a href="https://rstudio-education.github.io/hopr/starting.html"  target="_blank" 
+                 onclick="window.open('https://rstudio-education.github.io/hopr/starting.html','name','width=1200,height=700')"><link-btn> WEB LINK</link-btn></a></li>
+               <li>b. MikTex is required to knit RMD to PDF. <a href="https://miktex.org/download"  target="_blank"  onclick="window.open('https://miktex.org/download','name','width=1200,height=700')"><link-btn> WEB LINK</link-btn></a></li>
+            </ul>
+          <li> Platform account creation: RPubs, GitHub, SAS OnDemand
+                 <a href="w01/w01-R-RStudio-Github.html"  target="_blank" 
+                 onclick="window.open('w01/w01-R-RStudio-Github.html','name','width=1200,height=700')"><link-btn> HTML</link-btn></a>
+                
+                  <a href="w01/w01-R-RStudio-Github.pdf"  target="_blank" 
+                 onclick="window.open('w01/w01-R-RStudio-Github.pdf','name','width=1200,height=700')"><link-btn> PDF</link-btn></a>
+                  
+                 <a href="w01/w01-R-RStudio-Github.Rmd"  target="_blank" 
+                 onclick="window.open('w01/w01-R-RStudio-Github.Rmd','name','width=1200,height=700')"><link-btn> RMD</link-btn></a>            
+            </li>
+          <li> Suggested RMarkdown template for technical report writing</li>
+            <ul>
+              <li>a.  R Markdown Tutorial <a href="https://bookdown.org/yihui/rmarkdown/"  target="_blank" onclick="window.open('https://bookdown.org/yihui/rmarkdown/','name','width=1200,height=700')"><!--img src="img/weblink.jpg" width="60" height="15" --><link-btn> WEB LINK</link-btn></a></li>
+                
+              <li>b.  R Markdown code chunk options. <a href="https://bookdown.org/yihui/rmarkdown-cookbook/chunk-options.html"  target="_blank" 
+                 onclick="window.open('https://bookdown.org/yihui/rmarkdown-cookbook/chunk-options.html','name','width=1200,height=700')"><link-btn> WEB LINK</link-btn></a></li>
+              <li>c.  Suggested RMarkdown Template for Projects. <a href="w01/w01-RMarkdownTemplate4StatsReports.html"  target="_blank" 
+                 onclick="window.open('w01/w01-RMarkdownTemplate4StatsReports.html','name','width=1200,height=700')"><link-btn> HTML</link-btn></a>
+                
+                  <a href="w01/w01-RMarkdownTemplate4StatsReports.pdf"  target="_blank" 
+                 onclick="window.open('w01/w01-RMarkdownTemplate4StatsReports.pdf','name','width=1200,height=700')"><link-btn> PDF</link-btn></a>
+                                  
+                  <a href="w01/w01-RMarkdownTemplate4StatsReports.txt"  target="_blank" 
+                 onclick="window.open('w01/w01-RMarkdownTemplate4StatsReports.txt','name','width=1200,height=700')"><link-btn> TEXT</link-btn></a>
+                  
+                 <a href="w01/w01-RMarkdownTemplate4StatsReports.Rmd"  target="_blank" 
+                 onclick="window.open('w01/w01-RMarkdownTemplate4StatsReports.Rmd','name','width=1200,height=700')"><link-btn> RMD</link-btn></a>
+                </li>
+              <li>d.  LaTex Commands for math equations
+                 <a href="w01/w00-STA321MathematicFormulasRMarkdown.html"  target="_blank" 
+                 onclick="window.open('w01/w00-STA321MathematicFormulasRMarkdown.html','name','width=1200,height=700')"><link-btn> HTML</link-btn></a>
+                
+                  <a href="w01/w00-STA321MathematicFormulasRMarkdown.pdf"  target="_blank" 
+                 onclick="window.open('w01/w00-STA321MathematicFormulasRMarkdown.pdf','name','width=1200,height=700')"><link-btn> PDF</link-btn></a>
+                  
+                 <a href="w01/w00-STA321MathematicFormulasRMarkdown.Rmd"  target="_blank" 
+                 onclick="window.open('w01/w00-STA321MathematicFormulasRMarkdown.Rmd','name','width=1200,height=700')"><link-btn> RMD</link-btn></a>
+                </li>     
+              <li>e. Some Tips of RMarkdown
+                 <a href="w01/w01-IntroR-RStudio-Markdown.html"  target="_blank" 
+                 onclick="window.open('w01/w01-IntroR-RStudio-Markdown.html','name','width=1200,height=700')"><link-btn> HTML</link-btn></a>
+
+                 <a href="w01/w01-Advanced-RMD-CSS-HTML.Rmd"  target="_blank" 
+                 onclick="window.open('w01/w01-Advanced-RMD-CSS-HTML.Rmd','name','width=1200,height=700')"><link-btn> RMD</link-btn></a>
+                </li>                         
+            </ul>
+           <li>Getting started with HTML</li>
+            <ul>
+            <li>a. HTML Editors: RStudio, Notepad, Notepad++, Brackets, etc. <a href="https://brackets.io/"  target="_blank"  onclick="window.open('https://brackets.io/','name','width=1200,height=700')"><link-btn> WEB LINK to Brackets</link-btn></a>  </li>
+            <li>b. Preview of HTML<a href="w01/img/GettingStartedHTML.jpg"  target="_blank" 
+                 onclick="window.open('w01/img/GettingStartedHTML.jpg','name','width=1200,height=700')"><link-btn> IMAGE LINK</link-btn></a></li>
+            <li>c. HTML Color Codes<a href="http://www.simplehtmlguide.com/colours.php"  target="_blank" onclick="window.open('http://www.simplehtmlguide.com/colours.php','name','width=1200,height=700')"><link-btn> WEB LINK</link-btn></a></li>
+                
+            </ul>
+            
+          <li> Elements and template of a simple web page.  </li>
+            <ul>
+               <li>a. Basic HTML Tags <a href="w01/PDF/HTML-Basics-tags.pdf"  target="_blank" 
+                 onclick="window.open('w01/PDF/HTML-Basics-tags.pdf','name','width=1200,height=700')"><link-btn> CHEAT SHEET</link-btn></a></li>
+               <li>b. HTML page structure <a href="w01/img/HTML-PageStructure.jpg"  target="_blank" 
+                 onclick="window.open('w01/img/HTML-PageStructure.jpg','name','width=700, height=500')"><link-btn> IMAGE LINK</link-btn></a></li>
+               <li>c. A Simplest HTML Template. <a href="w01/img/HTML-Template-source.jpg"  target="_blank"  onclick="window.open('w01/img/HTML-Template-source.jpg','name','width=700, height=500')"><link-btn> IMAGE LINK</link-btn></a></li>
+            </ul>
         
-        <tr>
-          <TD>
-            <h3><font color="navy">Skills</font></h3>
-          </TD>
-          <TD>
-             <p> list your skills here.....</p>
-          </TD>
-        </tr>        
-       </table>   
-      </TD>
-    </tr>        
-   </table> 
-  <br><br><br><br>              
- </body>                                 <!-- close html body: required -->
+          <li> Webpage design: cascading style sheet (CSS) <font color="red">[<b>Optional</b>].</font></li>
+              <ul>
+                  <li>a. Inline, internal, and external CSS</li>
+                  <li>b. CSS Tutorial <a href="https://www.w3schools.com/css/default.asp"  target="_blank"  onclick="window.open('https://www.w3schools.com/css/default.asp','name','width=1200,height=700')"><link-btn> WEB LINK</link-btn></a></li>
+                  <li>c. CSS in R Markdown <a href="w01/img/RStudio4css.jpg"  target="_blank" 
+                 onclick="window.open('w01/img/RStudio4css.jpg','name','width=1200,height=700')"><link-btn> SCREENSHOT</link-btn></a></li>
+                  <li>d. CSS in an editor such as Brackets <a href="w01/img/Brackets4css.jpg" target="_blank" onclick="window.open('w01/img/Brackets4css.jpg','name','width=1200,height=700')"><link-btn> SCREENSHOT</link-btn></a></li>
+              </ul>
+            
+          <li> Organize web page contents with HTML tables</li>
+              <ul>
+                  <li>a. Simple HTML table structure: size, layout, borders, background, etc
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table"  target="_blank" 
+                 onclick="window.open('https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table','name','width=1000,height=600')"><link-btn> WEB LINK</link-btn></a>
+                  </li>
+                  <li>b. Nested Tables <a href="w01/img/nestedTable.jpg"  target="_blank" 
+                 onclick="window.open('w01/img/nestedTable.jpg','name','width=700,height=500')"><link-btn> IMAGE LINK</link-btn></a></li>
+              </ul>
+    
+           <li> Set up static professional webpages/online CV on the GitHub</li>
+               <p> 10.1. A Simple Version</p>
+               <ul>
+                 <li>a. The layout of a simple web page / online CV 
+                     <a href="w01/onlineCV/img/SimpleOnlineCV.jpg"  target="_blank"             onclick="window.open('w01/onlineCV/img/SimpleOnlineCV.jpg','name','width=700,height=500')"><link-btn> IMAGE LINK</link-btn></a></li>
+             
+                 <li>b. HTML Source of the above sample layout
+                     <a href="w01/onlineCV/SimleOnlineCV-Source.txt"  target="_blank" 
+                 onclick="w01/onlineCV/SimleOnlineCV-Source.txt', 'name','width=1000,height=600')"><link-btn>HTML SOURCE IN TXT</link-btn></a> 
+                   <a href="w01/onlineCV/w02-index.html"  target="_blank" 
+                 onclick="w01/onlineCV/w02-index.html', 'name','width=1000,height=600')"><link-btn>HTML WEB PAGE</link-btn></a> </li>            
+              </ul>
+               <p> 10.2. A Better Version</p>
+               <ul>
+                 <li>a. The layout of a better web page / online CV 
+                     <a href="w01/img/onlineCVTemplate.jpg" target="_blank"                            
+                 onclick="window.open('w01/img/onlineCVTemplate.jpg','name','width=700,height=500')"><link-btn> IMAGE LINK</link-btn></a></li>
+             
+                 <li>b. HTML Source of the above sample layout
+                     <a href="chpeng/cpeng-main.Rhtml"  target="_blank" 
+                 onclick="window.open('chpeng/cpeng-main.Rhtml','name','width=1000,height=600')"><link-btn>HTML SOURCE with RM</link-btn></a> 
+                   <a href="chpeng/cpeng-main.html"  target="_blank" 
+                 onclick="window.open('chpeng/cpeng-main.html','name','width=1000,height=600')"><link-btn>HTML WEB PAGE</link-btn></a></li>   
+               </ul>  
+                <p> 10.3. Set up the web page on GitHub</p>
+                <ul>   
+                  <li>a. GitHub wbe page file structure 
+                      <a href="w01/img/HTMLfileStructure.jpg" target="_blank"                 
+                 onclick="window.open('w01/img/HTMLfileStructure.jpg','name','width=600,height=400')"><link-btn> IMAGE LINK</link-btn></a></li> 
+                  <li>b. Web page configuration
+                  <a href="w01/PDF/WebConfig.pdf" target="_blank"                 
+                 onclick="window.open('w01/PDF/WebConfig.pdf','name','width=600,height=400')"><link-btn> CONFIGURATION STEPS</link-btn></a></li>
+                </ul>           
+            
+            
+            
+        </ol>
+        
+        <h5>Assignments</h5>
+        <ul>
+          <li>a. Follow the instructions given above to set up your online CV. If you have a CV, convert it into an online CV and publish it on the GitHub repository. If you don't have an existing CV, use one of the above templates to create a shell CV and publish it. You are expected to add your assignments to this CV throughout this semester.</li>
+          <li>b. Submit your URL of CV to the D2L drop box.</li>
+        </ul> 
+
+ <!-- go to top button -->           
+         <div class="but-wrap">
+            <a href="#top" class="button"><span><i class="more"></i><btn><font color = "darkblue">Table of Contents</font></btn></span></a>
+         </div>
+    </div>    
+</div>
+ <!----------------------------->
+ <!-- Layer two: right panel  -->
+ <!----------------------------->        
+        <aside id="aside" class="right">
+            
+            <div class="widget"><center><h3><font color = "#365060">Table of Contents</font></h3></center>
+                <!-- First post-->
+                <div class="post first">
+                    <div class="post-bg">
+                        <!--div class="post-inner"-->
+                         <ol>
+							<li> <a href="index.html">Logistics and Technical Tools</a></li>
+                            <li> <a href="index02.html">Ethics &amp;Principles of DataViz</a></li>
+                            <li> <a href="index03.html">R &amp; Base R Graphics</a></li>
+                            <li> <a href="index04.html">Data Management for DataViz</a></li>
+                            <li> <a href="index05.html">ggplot Revisited</a></li>
+                            <li> <a href="index06.html">Interactive Plot with plotly</a></li>
+                            <li> <a href="index07.html">Maps: Visualizing Spatial Information</a></li>
+                            <li> <a href="index08.html">Advanced Maps</a></li>
+                            <li> <a href="index09.html">Basic Graphics with Tableau</a></li>
+                            <li> <a href="index10.html">Interactive Graphics and Tableau Dashboard</a></li> 
+                            <li> <a href="index11.html">Getting Started With RShiny Apps</a></li>
+                            <li> <a href="index12.html">Data Analysis with Shiny Apps</a></li>
+                            <li> <a href="index13.html">R Shiny Flexdashboard</a></li>
+                            <li> <a href="index14.html">Shinydashboard and Multiple Flexdashboard</a></li> 
+                            <li> <a href="index15.html">Final Project Information </a></li>
+                      </ol>
+
+					</div>
+                </div>            
+                <!-- second post>
+                <div class="post">
+                    <div class="post-bg">
+                        <div class="post-inner">
+							<a href="">Free HTML template: Fashion Blog Paris</a>
+							<!--div class="goto-post">
+								<span class="ico-link date">March 25, 2014</span>
+                         </div>
+						</div>
+					</div>
+                </div> 
+            <!--p class="text-photo"><a href=" " rel="external">Facebook</a> | <a href="" rel="author me">Google+</a> | <a href="">Twitter</a></p-->
+        </div>
+    </aside>
+          <!--div>
+              <span class="bot-info">
+           <p><center>
+           <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=bdd86ca03bf3709e4523bf44ac939417956604f4'></script>
+          <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/832947/t/5"></script>
+           <!--a class="logo-down" href="http://www.freevisitorcounters.com">&nbsp;</a>   
+            </center></p>
+            </span>
+          </div-->  
+        
+    </div>
+
+ 
+              
+<!------------------>
+<!-- Footer panel --> 
+<!------------------>
+<div class="line-footer"></div>
+<footer id="footer">
+<center>
+      <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=bdd86ca03bf3709e4523bf44ac939417956604f4'></script>
+      <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/832947/t/5"></script><a href='http://www.freevisitorcounters.com'><img src="img/blackdot.jpg"></a><br>
+    <font color = "white">  
+         Copyright &copy; 2019-
+         <script>
+             var CurrentYear = new Date().getFullYear()
+                 document.write(CurrentYear)
+          </script>
+                   C. Peng. Last updated: 
+          <script> 
+                 document.write(new Date().toLocaleDateString()); 
+           </script>
+      </font>  
+ </center>
+  <div><p>&nbsp;</p></div><p></p>
+</footer> 
+              <!-- END OF FOOTER  --> 
+ <script>
+// Get the button
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>              
+              
+</div>           
+</div>
+</div>
+
+</body>
 </html>
